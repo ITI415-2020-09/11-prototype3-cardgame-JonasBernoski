@@ -19,10 +19,9 @@ public class NewInput : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -10));
             RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), out hit));
             {
                 if (hit.collider.CompareTag("Deck"))
                 {
