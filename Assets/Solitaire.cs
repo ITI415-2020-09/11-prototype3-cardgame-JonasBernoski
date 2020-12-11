@@ -96,7 +96,7 @@ public class Solitaire : MonoBehaviour
             {
                 GameObject newCard = Instantiate(cardBack, new Vector3(bottomPos[i].transform.position.x, bottomPos[i].transform.position.y + yOffset, bottomPos[i].transform.position.z + zOffest), Quaternion.identity, bottomPos[i].transform);
                 newCard.name = card;
-                newCard.GetComponent<Select>().faceup = i;
+                newCard.GetComponent<Select>().row = i;
 
                 if (card == bottoms[i][bottoms[i].Count - 1])
                 {

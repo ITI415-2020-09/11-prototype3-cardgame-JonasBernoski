@@ -1120,7 +1120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710064408}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -63.9, y: 18.5, z: 72.8}
+  m_LocalPosition: {x: -63.9, y: 18.5, z: -59.647472}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 964806252}
@@ -1364,7 +1364,7 @@ GameObject:
   - component: {fileID: 964806252}
   m_Layer: 0
   m_Name: Deck
-  m_TagString: Deck
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1377,7 +1377,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964806251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6, y: 28, z: -77.64748}
+  m_LocalPosition: {x: -1.6, y: 28, z: 54.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 710064409}
@@ -1414,6 +1414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c49f55e569a6843a77b14ea17e1cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slot1: {fileID: 0}
 --- !u!114 &1060065754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1481,6 +1482,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0d07f3c3a449e56419c76947a43cce69, type: 3}
   cardBack: {fileID: 8198420563623377182, guid: 4ca3a4cb84796514dbeba972e49fb7c8,
     type: 3}
+  deckButton: {fileID: 710064408}
   bottomPos:
   - {fileID: 395272716}
   - {fileID: 162998043}
@@ -1494,7 +1496,9 @@ MonoBehaviour:
   - {fileID: 1109970797}
   - {fileID: 163283550}
   - {fileID: 832316693}
+  tripsOnDisplay: []
   deck: []
+  discardPile: []
 --- !u!4 &1060065755
 Transform:
   m_ObjectHideFlags: 0
