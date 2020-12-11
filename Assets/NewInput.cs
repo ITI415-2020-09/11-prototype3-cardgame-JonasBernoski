@@ -23,18 +23,34 @@ public class NewInput : MonoBehaviour
     {
         // Draws a 5 unit long red line in front of the object
         Gizmos.color = Color.red;
-        Vector3 direction = transform.TransformDirection(Vector3.forward) * 5;
-        Gizmos.DrawRay(Input.mousePosition, direction);
+        Vector3 direction = transform.TransformDirection(Vector3.forward) * 250;
+        Gizmos.DrawRay(Camera.main.ScreenToWorldPoint(Input.mousePosition), direction);
     }
 
     void GetMouseClick()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
+
+            Debug.Log("Mouse Clicked");
+
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,
+                                                                            -Camera.main.transform.position.z));
             RaycastHit hit;
-            if (Physics.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward, out hit))
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            //Debug.Log("Raw: " + Input.mousePosition);
+            //Debug.Log("ConvertedMouse: " + Camera.main.ScreenToWorldPoint(mousePosition));
+            //Debug.Log("Input: "+Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            //Debug.Log("Computed: "+mousePosition);
+
+            //if (Physics.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward, out hit, 250.0f))
+            if (Physics.Raycast(ray, out hit))
             {
+
+                Debug.Log(hit.collider.gameObject.name);
+
                 if (hit.collider.CompareTag("Deck"))
                 {
                     Deck();
