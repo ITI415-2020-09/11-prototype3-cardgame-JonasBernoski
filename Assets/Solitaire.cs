@@ -12,7 +12,7 @@ public class Solitaire : MonoBehaviour
     public GameObject[] bottomPos;
     public GameObject[] topPos;
 
-    public static string[] suits = new string[] { "C", "D", "H'", "S" };
+    public static string[] suits = new string[] { "C", "D", "H", "S" };
     public static string[] values = new string[] { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
     public List<string>[] bottoms;
     public List<string>[] tops;
@@ -135,7 +135,7 @@ public class Solitaire : MonoBehaviour
         tripsRemainder = deck.Count % 3;
         deckTrips.Clear();
         int modifier = 0;
-        for (int i = 0; i < tripsRemainder; i++)
+        for (int i = 0; i < trips; i++)
         {
             List<string> myTrips = new List<string>();
             for (int j = 0; j< 3; j++)
@@ -195,6 +195,7 @@ public class Solitaire : MonoBehaviour
     }
     void RestackTopDeck()
     {
+        deck.Clear();
         foreach (string card in discardPile)
         {
             deck.Add(card);
