@@ -8,6 +8,7 @@ public class NewInput : MonoBehaviour
     public GameObject slot1;
     private Solitaire solitaire;
 
+
     void Start()
     {
         solitaire = FindObjectOfType<Solitaire>();
