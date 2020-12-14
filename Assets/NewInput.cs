@@ -177,13 +177,13 @@ public class NewInput : MonoBehaviour
     {
         Select s1 = slot1.GetComponent<Select>();
         Select s2 = selected.GetComponent<Select>();
-        float yOffset = 0.3f;
+        float yOffset = 4;
 
         if (s2.top || (!s2.top && s1.value == 13))
         {
             yOffset = 0;
         }
-        slot1.transform.position = new Vector3(selected.transform.position.x, selected.transform.position.y - yOffset, selected.transform.position.z - 0.01f);
+        slot1.transform.position = new Vector3(selected.transform.position.x, selected.transform.position.y - yOffset, selected.transform.position.z - 1f);
         slot1.transform.parent = selected.transform;
 
         if (s1.inDeckPile)
